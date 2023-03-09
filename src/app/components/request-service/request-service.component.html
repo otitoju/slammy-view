@@ -1,0 +1,154 @@
+<!-- <section id="hero" class="hero p-0 odd featured">
+  <div class="swiper-container no-slider slider-h-50">
+      <div class="swiper-wrapper">
+
+
+          <div class="swiper-slide slide-center">
+
+              <img data-mask="50" src="assets/images/bg-1.jpg" class="full-image">
+
+              <div class="slide-content row text-center">
+                  <div class="col-12 mx-auto inner">
+                      <h1 data-aos="zoom-out-up" data-aos-delay="400" class="title effect-static-text">Service Request</h1>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section> -->
+
+
+<!-- Simple Form -->
+<section id="contact" class="section-1 odd form">
+  <div class="container smaller">
+      <div class="row text-center intro">
+          <div class="col-12">
+              <h2>Fill in your information here</h2>
+              <p class="text-max-800">Upload a couple of images for more accurate prices and some examples of the style you are looking for. You can also mark out the areas which are needed to be fixed just for better understanding. Leave us the detailed instructions and and our photo retouchers will get in touch with you within 12 hours.</p>
+              <p>
+                NOTE: We deliver in 2 - 3 days but express delivery will attract extra charges.
+              </p>
+          </div>
+      </div>
+      <form  id="leverage-simple-form" class="leverage-simple-form">
+          <!-- Remove this field if you want to disable recaptcha -->
+
+          <div class="row form-group-margin">
+              <div class="col-12 col-md-6 m-0 p-2 input-group">
+                  <input type="text" name="name" [(ngModel)]="payload.fname" class="form-control field-name" placeholder="Firstname*" required>
+              </div>
+              <div class="col-12 col-md-6 m-0 p-2 input-group">
+                  <input type="text" name="Lname" [(ngModel)]="payload.lname" class="form-control field-email" placeholder="Lastname*" required>
+              </div>
+
+              <div class="col-4 col-md-4 col-lg-2  m-0 p-2 input-group">
+                <input [(ngModel)]="code"  type="text" name="phone" class="form-control field-phone" placeholder="e.g +234" required/>
+              </div>
+                <div class="col-8 col-md-8 col-lg-10 m-0 p-2 input-group">
+                    <input type="tel" name="phone" [(ngModel)]="payload.phone" class="form-control field-phone" placeholder="Phone*" required>
+                </div>
+
+              <div class="col-12 col-md-12 m-0 p-2 input-group">
+                <input type="number" min="1" name="qty" [(ngModel)]="payload.qty" class="form-control field-name" placeholder="Quantity of Photos*" required>
+            </div>
+
+              <div class="col-12 col-md-12 m-0 p-2 input-group">
+                <input type="email" name="email" [(ngModel)]="payload.email" class="form-control field-email" placeholder="Email*" required>
+            </div>
+              <div class="col-12 col-md-12 m-0 p-2 input-group">
+                <input type="text" name="service" [(ngModel)]="payload.service" class="form-control field-phone" placeholder="Service required*">
+            </div>
+            <div class="col-12 col-md-12 m-0 p-2 input-group">
+              <input type="url" name="url" [(ngModel)]="payload.url" class="form-control field-phone" placeholder="File url for google drive, dropbox or wetransfer (if available)">
+            </div>
+              <div class="col-12 m-0 p-2 input-group">
+                  <textarea name="message" [(ngModel)]="payload.instruction" class="form-control field-message" placeholder="Instructions"></textarea>
+              </div>
+              <div class="col-12 col-md-12 m-0 p-2 input-group">
+                <input type="file" name="file" (change)="UploadFile($event)" class="form-control field-phone" placeholder="Service required">
+            </div>
+            <div class="col-12 col-md-12 m-0 p-2 input-group">
+              <label for="">Delivery options</label>
+              <i class="icon-arrow-down mr-3"></i>
+              <select [(ngModel)]="payload.delivery" name="budget" class="form-control field-budget">
+                  <option selected disabled>Select your delivery options</option>
+                  <option></option>
+                  <option value="free">Free Delivery</option>
+                  <option value="express">Express Delivery</option>
+
+              </select>
+          </div>
+
+              <div class="col-12 col-12 m-0 pl-md-2">
+                  <span class="form-alert"></span>
+              </div>
+              <div class="col-12 input-group m-0 p-2">
+                  <a (click)="makePayment()" class="btn primary-button">Pay {{paymentData.currency === "USD" ? "$" : "₦"}}{{paymentData.amount}} now</a>
+              </div>
+          </div>
+      </form>
+  </div>
+</section>
+
+
+<!-- Modal [responsive menu] -->
+<div id="menu" class="p-0 modal fade" role="dialog" aria-labelledby="menu" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-slideout" role="document">
+        <div class="modal-content full">
+            <div class="modal-header" data-dismiss="modal">
+                Menu <i class="icon-close"></i>
+            </div>
+            <div class="menu modal-body">
+                <div class="row w-100">
+                    <div class="items p-0 col-12 text-center">
+                        <!-- Append [navbar] -->
+                    </div>
+                    <div class="contacts p-0 col-12 text-center">
+                        <!-- Append [navbar] -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+<!-- <div id="register" class="p-0 modal fade" role="dialog" aria-labelledby="register" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-slideout" role="document">
+      <div class="modal-content full">
+          <div class="modal-header" data-dismiss="modal">
+              Checkout <i class="icon-close"></i>
+          </div>
+          <div class="modal-body">
+              <form action="/" class="row">
+                  <div class="col-12 p-0 align-self-center">
+                      <div class="row">
+                          <div class="col-12 p-0 pb-3">
+                              <h3 style="color: white ;">Personal Information</h3>
+
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-12 p-0 input-group">
+                              <input [(ngModel)]="customerDetails.name" type="text" name="fname" class="form-control" placeholder="Fullname" required>
+                          </div>
+                          <div class="col-12 p-0 input-group">
+                              <input [(ngModel)]="customerDetails.email" name="email" type="email" class="form-control" placeholder="Email" required>
+                          </div>
+                          <div class="col-12 p-0 input-group">
+                              <input [(ngModel)]="customerDetails.phone_number" name="phone" type="text" class="form-control" placeholder="Phone number" required>
+                          </div>
+
+                      </div>
+                      <div class="row">
+                          <div class="col-12 p-0 input-group align-self-center">
+
+                              <button (click)="makePayment()" class="btn primary-button">Pay {{paymentData.currency === "USD" ? "$" : "₦"}}{{paymentData.amount}} now</button>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div> -->

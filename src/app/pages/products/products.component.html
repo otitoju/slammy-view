@@ -1,0 +1,63 @@
+
+<div >
+  <section id="services" class="section-4 odd offers featured">
+    <app-loader *ngIf="Data.length < 1"></app-loader>
+    <div *ngIf="Data.length > 0" class="container">
+
+        <div class="row text-center items">
+            <div *ngFor="let item of Data" class="col-12 col-md-6 col-lg-4 item">
+                <div class="card p-0 text-center item" (click)="getProduct(item._id)">
+                  <div class="image-over">
+                      <img src={{item.image}} class="img-fluid product-image" alt={{item.productName}}>
+                  </div>
+                  <div class="card-caption col-12">
+                      <div class="card-body text-center">
+                          <a routerLink="/product">
+                              <h4>{{item.productName}}</h4>
+                          </a>
+                      </div>
+                      <div *ngIf="item.actualPrice !== 0" class="card-footer d-lg-flex align-items-center justify-content-center">
+                          <a [ngStyle]="{'text-decoration': item.discountPrice > 0 ? 'line-through' : 'none', 'color': '#fff', 'font-size': '17px' }" href="product" class="d-lg-flex align-items-center">{{item.currency === "USD" ? "$" : "₦"}} {{item.actualPrice}}</a>
+                          <a style="color: #fff; font-size: 17px;" *ngIf="item.discountPrice > 0" href="#" class="d-lg-flex align-items-center">{{item.currency === "USD" ? "$" : "₦"}} {{item.discountPrice}}</a>
+                      </div>
+                      <div *ngIf="item.actualPrice === 0" class="card-footer d-lg-flex align-items-center justify-content-center">
+                        <a href="product" class="d-lg-flex align-items-center dark-button smooth-anchor">Free</a>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+
+        </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- Modal [responsive menu] -->
+<div id="menu" class="p-0 modal fade" role="dialog" aria-labelledby="menu" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-slideout" role="document">
+      <div class="modal-content full">
+          <div class="modal-header" data-dismiss="modal">
+              Menu <i class="icon-close"></i>
+          </div>
+          <div class="menu modal-body">
+              <div class="row w-100">
+                  <div class="items p-0 col-12 text-center">
+                      <!-- Append [navbar] -->
+                  </div>
+                  <div class="contacts p-0 col-12 text-center">
+                      <!-- Append [navbar] -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Scroll [to top] -->
+<div id="scroll-to-top" class="scroll-to-top">
+  <a href="#header" class="smooth-anchor">
+      <i class="icon-arrow-up"></i>
+  </a>
+</div>

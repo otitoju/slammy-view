@@ -1,0 +1,8 @@
+aside {
+  background-color: var(--footer-bg-color);
+  padding-left: 1rem!important;
+}
+
+aside .row {
+  margin-top: 15px!important;
+}

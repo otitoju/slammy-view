@@ -1,0 +1,24 @@
+<section id="slider" class="hero p-0 odd">
+  <div class="swiper-container full-slider featured animation slider-h-100">
+      <div class="swiper-wrapper">
+
+          <!-- Item 1 -->
+          <div class="swiper-slide slide-center" *ngFor="let item of data">
+              <img data-aos="zoom-out-up" data-aos-delay="800" src={{item.image}} class="hero-image" alt="Hero Image">
+              <div class="slide-content row" data-mask-768="50">
+                  <div class="col-12 d-flex inner">
+                      <div class="left align-self-center text-center text-md-left">
+                          <h1 data-aos="zoom-out-up" data-aos-delay="400" class="title effect-static-text">{{item.title}}
+                          </h1>
+                          <p data-aos="zoom-out-up" data-aos-delay="800" class="description">{{item.content}}</p>
+                            <a [routerLink]='item.link' data-aos="zoom-out-up" data-aos-delay="1200" class="smooth-anchor ml-auto mr-auto ml-md-0 mt-4 btn dark-button"><i class="icon-cup"></i>BUY NOW</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+      </div>
+      <div class="swiper-pagination"></div>
+  </div>
+</section>

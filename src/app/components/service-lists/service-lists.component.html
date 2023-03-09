@@ -1,0 +1,119 @@
+<section id="services" class="section-4 odd offers featured">
+  <div class="container">
+      <div class="row intro">
+          <div class="col-12 col-md-9 align-self-center text-center text-md-left">
+              <h2 class="featured">Our Services</h2>
+              <p> If you want a customized plan write to us directly
+                3 days delivery time, Express delivery(within 24 hours) is double the price of any of the packages you choose</p>
+          </div>
+
+      </div>
+
+      <div class="row justify-content-center text-center items">
+        <div class="col-6 col-md-6 col-lg-3 item">
+            <div class="">
+              <i class="fa fa-clipboard icon" aria-hidden="true"></i>
+                <h4>Click on any service of your choice</h4>
+            </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3 item">
+            <div class="">
+              <i class="fa fa-file-text icon" aria-hidden="true"></i>
+                <h4>Fill all the input fields</h4>
+
+            </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3 item">
+            <div class="">
+              <i class="fa fa-cloud-upload icon" aria-hidden="true"></i>
+                <h4>Upload files or link to files</h4>
+
+            </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3 item">
+            <div class="">
+              <i class="fa fa-paper-plane icon" aria-hidden="true"></i>
+                <h4>Submit</h4>
+
+            </div>
+        </div>
+
+    </div>
+      <app-loader *ngIf="services.length < 1"></app-loader>
+      <div *ngIf="services.length > 0" class="row justify-content-center text-center items">
+          <div class="col-12 col-md-6 col-lg-4 item" *ngFor="let item of services">
+              <div class="card featured" (click)="requestService(item._id)">
+                <img src={{item.image}} class="w-100">
+                  <h4>{{item.title}}</h4>
+                  <p class="service-price">{{item.currency === "USD" ? " $" : "₦"}}{{item.price}} per photo Services applied:</p>
+                  <p align="justify">{{item.content}}</p>
+
+              </div>
+          </div>
+      </div>
+
+      <!-- <div *ngIf="services.length > 0" class="row justify-content-center text-center items">
+        <div class="col-12 col-md-6 col-lg-4 item" *ngFor="let item of services">
+          <div class="containerr">
+            <div class="image before" style="background-image:url('assets/images/before/BASIC B42.jpg');"></div>
+            <div class="image after" style="background-image:url('assets/images/before/BASIC AFTER1.jpg');"></div>
+
+            <input type="range" class="slider" min="1" max="100" value="50" />
+            <div class="slider-button"></div>
+          </div>
+        </div>
+    </div> -->
+
+
+
+
+  </div>
+</section>
+
+
+<!-- Modal [responsive menu] -->
+<div id="menu" class="p-0 modal fade" role="dialog" aria-labelledby="menu" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-slideout" role="document">
+      <div class="modal-content full">
+          <div class="modal-header" data-dismiss="modal">
+              Menu <i class="icon-close"></i>
+          </div>
+          <div class="menu modal-body">
+              <div class="row w-100">
+                  <div class="items p-0 col-12 text-center">
+                      <!-- Append [navbar] -->
+                  </div>
+                  <div class="contacts p-0 col-12 text-center">
+                      <!-- Append [navbar] -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- <main>
+  <div class="containing">
+    <div class="image-container">
+      <img src="assets/images/before/BASIC B4.jpg" alt="before slider-image" class="before slider-image"/>
+      <img src="assets/images/before/BASIC AFTER.jpg" alt="after" class="after slider-image">
+    </div>
+
+    <input type="range" min="0" max="100" value="50" class="sliding" aria-label="Percentage of before photo shown"/>
+    <div class="sliding-line"></div>
+    <div class="sliding-button" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><line x1="128" y1="40" x2="128" y2="216" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="16" y1="128" x2="96" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><polyline points="64 96 96 128 64 160" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline><line x1="240" y1="128" x2="160" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><polyline points="192 160 160 128 192 96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></polyline></svg>
+    </div>
+
+  </div>
+</main> -->
+
+
+<!-- <div class="containerr">
+	<div class="image before" style="background-image:url('assets/images/before/BASIC B42.jpg');"></div>
+	<div class="image after" style="background-image:url('assets/images/before/BASIC AFTER1.jpg');"></div>
+
+	<input type="range" class="slider" min="1" max="100" value="50" />
+	<div class="slider-button"></div>
+</div> -->

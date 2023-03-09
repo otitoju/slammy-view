@@ -1,0 +1,34 @@
+<section id="video" class="section-2 odd highlights image-left">
+  <div class="container">
+      <div class="row">
+          <div class="gallery col-12 col-md-6">
+              <a data-poster="assets/images/about-5.jpg" href="https://youtu.be/8Ofl0JgX1xk">
+                  <i class="play-video icon-control-play"></i>
+                  <div class="mask-radius"></div>
+                  <img src="assets/images/Home/headshot/vimage.jpg" class="fit-image" alt="Institutional">
+              </a>
+          </div>
+          <div class="col-12 col-md-6 pl-md-5 align-self-center text-center text-md-left">
+              <div class="row intro">
+                  <div class="col-12 p-0">
+                      <h2 class="featured alt">Free Packages</h2>
+                      <!-- <p>Get to know a little of our history and the road we traveled that took us to the level we are today.</p> -->
+                  </div>
+              </div>
+              <div class="row items">
+                  <div class="col-12 p-0">
+                      <div class="row item" *ngFor="let item of packages">
+                          <div class="col-12 col-md-2 align-self-center">
+                              <i class={{item.icon}}></i>
+                          </div>
+                          <div class="col-12 col-md-9 align-self-center">
+                              <h4>{{item.title}}</h4>
+                              <p>{{item.content}}</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
