@@ -1,6 +1,0 @@
-{
-  "/api/v1/": {
-    "target": "https://api.slammyphotography.com",
-    "secure": false
-  }
-}
